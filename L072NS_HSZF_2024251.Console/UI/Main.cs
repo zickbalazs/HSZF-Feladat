@@ -10,14 +10,15 @@ namespace L072NS_HSZF_2024251.Console.UI
     internal class Main
     {
         private IViewData viewData;
+        private IFileRead fileRead;
 
-        public Main(IViewData viewData)
+        public Main(IViewData viewData, IFileRead fileRead)
         {
             this.viewData = viewData;
+            this.fileRead = fileRead;
             this.viewData.OnExiting += (e, obj) => this.Run();
+            this.fileRead.OnExiting += (e, obj) => this.Run();
         }
-
-
 
         private SelectionPrompt<string> mainMenu = new SelectionPrompt<string>()
             .Title("NLB Busmanagement App")
@@ -25,6 +26,7 @@ namespace L072NS_HSZF_2024251.Console.UI
 
         public void Run()
         {
+            AnsiConsole.Clear();
             string selected = AnsiConsole.Prompt(mainMenu);
             HandleSelection(selected);
         }
@@ -34,6 +36,16 @@ namespace L072NS_HSZF_2024251.Console.UI
             {
                 case "Start":
                     viewData.Run();
+                    break;
+                case "Statistics":
+                    break;
+                case "Import":
+                    fileRead.Run();
+                    break;
+                case "Export":
+                    break;
+                default:
+                    Environment.Exit(0);
                     break;
             }
         }

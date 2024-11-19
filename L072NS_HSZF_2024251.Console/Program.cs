@@ -33,7 +33,8 @@ namespace L072NS_HSZF_2024251.Console
             System.Console.Clear();
 
             UI.Main ui = new UI.Main(
-                new ViewData(provider.GetService<IRegionService>())
+                new ViewData(provider.GetService<IRegionService>()),
+                new FileRead(provider.GetService<IFileService>())
             );
 
             ui.Run();
