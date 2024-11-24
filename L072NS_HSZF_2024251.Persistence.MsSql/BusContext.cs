@@ -25,7 +25,7 @@ namespace L072NS_HSZF_2024251.Persistence.MsSql
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=NLB;Integrated Security=True");
+            optionsBuilder.UseSqlServer(@"Data Source=(LocalDB)\MSSQLLocalDB;Initial Catalog=L072NS-NLB;Integrated Security=True");
             base.OnConfiguring(optionsBuilder);
         }
     }
