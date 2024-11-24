@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace L072NS_HSZF_2024251.Application
 {
-    public class RegionSearchDto
+    public class RegionDto
     {
         public string? RegionName { get; set; }
         public int? RegionNumber { get; set; }

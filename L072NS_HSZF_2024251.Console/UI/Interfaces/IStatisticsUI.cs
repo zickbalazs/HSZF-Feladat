@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace L072NS_HSZF_2024251.Console.UI
 {
-    internal interface IViewData
+    public interface IStatisticsUI : IExitable
     {
-        event EventHandler OnExiting;
         void Run();
+        void SaveToFiles(string folderPath);
     }
 }

@@ -9,12 +9,10 @@ namespace L072NS_HSZF_2024251.Application.Interfaces
 {
     public interface IRouteService
     {
-        ICollection<Route> GetAllRoutes();
-        ICollection<Route> GetRoutesByRegion(int regionNumber);
-        Route GetRouteById(Guid id);
+        event EventHandler? OnLowestDelayAdded;
 
+        ICollection<Route> GetAllRoutes();
+        Route GetRouteById(Guid id);
         public void UploadRoute(Route route);
-        public void DeleteRoute(Guid id);
-        public void UpdateRoute(Guid id, Route modifiedRoute);
     }
 }

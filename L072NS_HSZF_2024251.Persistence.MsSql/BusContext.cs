@@ -10,7 +10,6 @@ namespace L072NS_HSZF_2024251.Persistence.MsSql
 
         public BusContext()
         {
-            Database.EnsureDeleted();
             Database.EnsureCreated();
         }
 

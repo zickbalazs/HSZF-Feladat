@@ -23,7 +23,6 @@ namespace L072NS_HSZF_2024251.Model
         public int BusNumber { get; set; }
         [Required]
         public int RegionId { get; set; }
-
         public int DelayAmount { get; set; } = 0;
 
         

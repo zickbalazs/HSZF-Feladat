@@ -10,6 +10,6 @@ namespace L072NS_HSZF_2024251.Application.Interfaces
     {
 
         void ImportJSONToDatabase(string filePath);
-        void ExportDatabaseToJSON(string folderPath);
+        void ExportDatabaseToJSON(string folderPath, out string generatedFileName);
     }
 }

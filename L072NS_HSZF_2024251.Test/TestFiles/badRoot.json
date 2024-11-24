@@ -1,0 +1,19 @@
+﻿{
+  "Main": [
+    {
+      "RegionNumber": 1,
+      "RegionName": "Bács-Kiskun",
+      "Routes": [
+        {
+          "Id": "00000000-0000-0000-0000-000000000000",
+          "From": "Baja",
+          "To": "Kalocsa",
+          "BusType": "Local",
+          "BusNumber": 1,
+          "RegionId": 1,
+          "DelayAmount": 120
+        }
+      ]
+    }
+  ]
+}

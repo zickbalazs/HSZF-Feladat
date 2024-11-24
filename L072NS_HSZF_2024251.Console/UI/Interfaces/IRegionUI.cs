@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace L072NS_HSZF_2024251.Console.UI
 {
-    internal interface IFileWrite
+    public interface IRegionUI : IExitable
     {
-        event EventHandler OnExiting;
         void Run();
     }
 }

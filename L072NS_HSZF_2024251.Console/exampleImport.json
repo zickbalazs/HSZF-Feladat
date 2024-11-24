@@ -2,117 +2,113 @@
   "BusRegions": [
     {
       "RegionName": "Bács-Kiskun vármegye",
-      "RegionNumber": 100,
+      "RegionNumber": 1,
       "Routes": [
         {
+          "BusNumber": 1110,
+          "BusType": "National",
           "From": "Baja",
-          "To": "Kalocsa",
-          "BusNumber": 2050,
-          "BusType": "Regional",
-          "DelayAmount": 25
+          "To": "Budapest",
+          "DelayAmount": 23
         },
         {
-          "From": "Baja",
-          "To": "Kalocsa",
-          "BusNumber": 2050,
-          "BusType": "Regional",
-          "DelayAmount": 5
-        },
-        {
-          "From": "Baja",
-          "To": "Kalocsa",
-          "BusNumber": 2050,
-          "BusType": "Regional",
-          "DelayAmount": 12
-        },
-        {
-          "From": "Kecskemét",
-          "To": "Kalocsa",
-          "BusNumber": 5010,
-          "BusType": "Regional",
-          "DelayAmount": 3
-        },
-        {
-          "From": "Kecskemét",
-          "To": "Kalocsa",
-          "BusNumber": 5010,
-          "BusType": "Regional",
-          "DelayAmount": 32
-        },
-        {
-          "From": "Kecskemét",
-          "To": "Kalocsa",
-          "BusNumber": 5010,
-          "BusType": "Regional",
+          "BusNumber": 10010,
+          "BusType": "Local",
+          "From": "Baja autóbuszállomás",
+          "To": "Baja Tesco",
           "DelayAmount": 10
         },
         {
-          "From": "Baja hűtőház",
-          "To": "Baja Tesco",
-          "BusNumber": 10010,
+          "BusNumber": 1110,
+          "BusType": "National",
+          "From": "Baja",
+          "To": "Budapest",
+          "DelayAmount": 10
+        },
+        {
+          "BusNumber": 1110,
+          "BusType": "National",
+          "From": "Baja",
+          "To": "Budapest",
+          "DelayAmount": 4
+        },
+        {
+          "BusNumber": 837,
+          "BusType": "Regional",
+          "From": "Baja",
+          "To": "Kecskemét",
+          "DelayAmount": 8
+        },
+        {
+          "BusNumber": 1010,
           "BusType": "Local",
-          "DelayAmount": 2
+          "From": "Kecskemét Széchényi tér",
+          "To": "Kecskemét Tesco",
+          "DelayAmount": 23
         }
       ]
     },
     {
       "RegionName": "Pest vármegye",
-      "RegionNumber": 200,
+      "RegionNumber": 2,
       "Routes": [
         {
-          "From": "Megyeri utca",
-          "To": "Keleti pályaudvar M",
           "BusNumber": 30,
           "BusType": "Local",
+          "From": "Keleti-pályaudvar M",
+          "To": "Megyer, Szondi utca",
+          "DelayAmount": 10
+        },
+        {
+          "BusNumber": 30,
+          "BusType": "Local",
+          "From": "Keleti-pályaudvar M",
+          "To": "Megyer, Szondi utca",
+          "DelayAmount": 14
+        },
+        {
+          "BusNumber": 30,
+          "BusType": "Local",
+          "From": "Keleti-pályaudvar M",
+          "To": "Megyer, Szondi utca",
+          "DelayAmount": 8
+        },
+        {
+          "BusNumber": 30,
+          "BusType": "Local",
+          "From": "Keleti-pályaudvar M",
+          "To": "Megyer, Szondi utca",
+          "DelayAmount": 5
+        },
+        {
+          "BusNumber": 32,
+          "BusType": "Local",
+          "From": "Göncz Árpád vkp. M",
+          "To": "Örs vezér tere M+H",
+          "DelayAmount": 14
+        },
+        {
+          "BusNumber": 32,
+          "BusType": "Local",
+          "From": "Göncz Árpád vkp. M",
+          "To": "Örs vezér tere M+H",
+          "DelayAmount": 4
+        },
+        {
+          "BusNumber": 32,
+          "BusType": "Local",
+          "From": "Göncz Árpád vkp. M",
+          "To": "Örs vezér tere M+H",
           "DelayAmount": 2
         },
         {
-          "From": "Megyeri utca",
-          "To": "Keleti pályaudvar M",
-          "BusNumber": 30,
+          "BusNumber": 32,
           "BusType": "Local",
-          "DelayAmount": 12
-        },
-        {
-          "From": "Köbánya-Kispest",
-          "To": "Keleti pályaudvar M",
-          "BusNumber": 310,
-          "BusType": "Local",
-          "DelayAmount": 12
-        },
-        {
-          "From": "Göncz Árpád városközpont M",
-          "To": "Keleti pályaudvar M",
-          "BusNumber": 42,
-          "BusType": "Local",
-          "DelayAmount": 20
+          "From": "Göncz Árpád vkp. M",
+          "To": "Örs vezér tere M+H",
+          "DelayAmount": 30
         }
       ]
-    },
-    {
-      "RegionName": "Tolna vármegye",
-      "RegionNumber": 300,
-      "Routes": []
-    },
-    {
-      "RegionName": "Győr-Moson-Sopron vármegye",
-      "RegionNumber": 400,
-      "Routes": []
-    },
-    {
-      "RegionName": "Csongrád-Csanád vármegye",
-      "RegionNumber": 500,
-      "Routes": []
-    },
-    {
-      "RegionName": "Veszprém vármegye",
-      "RegionNumber": 600,
-      "Routes": []
-    },
-    {
-      "RegionName": "Baranya vármegye",
-      "RegionNumber": 700,
-      "Routes": []
     }
   ]
 }

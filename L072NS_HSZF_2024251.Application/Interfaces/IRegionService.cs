@@ -10,7 +10,7 @@ namespace L072NS_HSZF_2024251.Application.Interfaces
     public interface IRegionService
     {
         ICollection<Region> GetAllRegions();
-        ICollection<Region> GetRegionsByFilter(Func<Region, bool> filter);
+        ICollection<Region> SearchRegions(RegionDto dto);
 
         Region GetRegionById(int id);
 

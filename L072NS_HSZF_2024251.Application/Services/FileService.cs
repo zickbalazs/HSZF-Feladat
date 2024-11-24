@@ -3,9 +3,11 @@ using L072NS_HSZF_2024251.Model;
 using L072NS_HSZF_2024251.Persistence.MsSql;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Schema;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -22,13 +24,16 @@ namespace L072NS_HSZF_2024251.Application.Services
             _routeRepo = routeRepo;
         }
 
-        public void ExportDatabaseToJSON(string folderPath)
+        public void ExportDatabaseToJSON(string folderPath, out string generatedFileName)
         {
             ICollection<Region> regions = _regionRepo.Batch();
             JObject j = new JObject();
-            j["BusRegions"] = JsonConvert.SerializeObject(regions);
-            j.ToString();
-
+            j["BusRegions"] = JArray.FromObject(regions);
+            string _out = j.ToString(Formatting.Indented);
+            generatedFileName = $"NLB-export-{DateTime.Now.ToFileTimeUtc()}.json";
+            if (Directory.Exists(folderPath))
+                File.WriteAllText($@"{folderPath}\{generatedFileName}", _out);
+            else throw new DirectoryNotFoundException();
 
         }
 
@@ -37,15 +42,35 @@ namespace L072NS_HSZF_2024251.Application.Services
             if (!File.Exists(filePath))
                 throw new FileNotFoundException();
 
-            JToken? obj = JObject.Parse(File.ReadAllText(filePath))["BusRegions"];
-            if (obj == null)
-                throw new FormatException();
+            JToken obj = JToken.Parse(File.ReadAllText(filePath));
+            
+            try
+            {
+                JObject i = (JObject)obj;
+            }
+            catch
+            {
+                throw new FormatException("The file doesn't contain the BusRegions Root element");
+            }
+
+            JToken token = obj["BusRegions"] ?? throw new FormatException("Couldn't find the root BusRegions element!");
+
+            
 
             ICollection<Region> dbRegions = _regionRepo.Batch();
 
-            ICollection<Region>? regions = JsonConvert.DeserializeObject<ICollection<Region>>(obj.ToString());
-            if (regions == null)
-                throw new FormatException();
+            ICollection<Region> regions;
+            try
+            {
+                regions = JsonConvert.DeserializeObject<ICollection<Region>>(token.ToString(), new JsonSerializerSettings()
+                {
+                    MissingMemberHandling = MissingMemberHandling.Error
+                })!;
+            }
+            catch
+            {
+                throw new FormatException("The BusRegions field is not correctly formatted!");
+            }
 
             foreach (Region region in regions)
             {

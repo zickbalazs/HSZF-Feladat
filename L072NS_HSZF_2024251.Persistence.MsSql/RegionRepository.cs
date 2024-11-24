@@ -44,7 +44,7 @@ namespace L072NS_HSZF_2024251.Persistence.MsSql
         public void Update(int id, Region region)
         {
             Region dbObj = context.Regions.First(e => e.RegionNumber == id)!;
-            dbObj = region;
+            dbObj.RegionName = region.RegionName;
             context.SaveChanges();
         }
     }

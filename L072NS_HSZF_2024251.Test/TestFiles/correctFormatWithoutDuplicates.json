@@ -1,0 +1,18 @@
+﻿{
+  "BusRegions": [
+    {
+      "RegionNumber": 1,
+      "RegionName": "Pest vármegye",
+      "Routes": [
+        {
+          "From": "Keleti pályaudvar M",
+          "To": "Megyer, Szondi utca",
+          "BusType": "Local",
+          "BusNumber": 30,
+          "RegionId": 1,
+          "DelayAmount": 32
+        }
+      ]
+    }
+  ]
+}

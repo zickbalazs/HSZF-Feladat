@@ -1,4 +1,5 @@
-﻿using System;
+﻿using L072NS_HSZF_2024251.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,9 +7,8 @@ using System.Threading.Tasks;
 
 namespace L072NS_HSZF_2024251.Console.UI
 {
-    internal interface IFileRead
+    public interface IRouteActions : IExitable
     {
-        void Run();
-        event EventHandler OnExiting;
+        void Run(Region region);
     }
 }

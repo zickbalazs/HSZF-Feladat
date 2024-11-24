@@ -40,16 +40,21 @@ namespace L072NS_HSZF_2024251.Application.Services
             return search;
         }
 
-        public ICollection<Region> GetRegionsByFilter(Func<Region, bool> filter)
+        public ICollection<Region> SearchRegions(RegionDto dto)
         {
-            return _regionRepository.Batch().Where(filter).ToHashSet();
+            return _regionRepository.Batch().Where(x =>
+                            (string.IsNullOrWhiteSpace(dto.RegionName) || x.RegionName.Contains(dto.RegionName))&&
+                            (dto.RegionNumber == null || x.RegionNumber == dto.RegionNumber)
+            ).ToHashSet();
         }
 
         public void UpdateRegion(int id, Region region)
         {
             if (region.RegionNumber != id)
                 throw new ArgumentException();
-            _regionRepository.Add(region);
+            if (_regionRepository.Get(id) == null)
+                throw new KeyNotFoundException();
+            _regionRepository.Update(id, region);
         }
 
         public void UploadRegion(Region region)
